@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>PROFILE PAGE</h1>
+<h2>in app template: {{ object.name }} </h2>
+<p>{% if object.description != None and object.description != '' %} {{ description}} {% else %}no description for this user {% endif%} </p>
+<p>Email Address: {{object.email}}</p>
+<p>Featured: {{object.featured}}</p>
+{% endblock %}

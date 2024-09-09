@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Contact...</h1>
+
+<p>this is a template. very cool</p>
+<h2>Context passing stuff?</h2>
+<p>
+    {{ user }}
+</p>
+<p>
+    Showing {{ number }} random numbers:
+</p>
+<p>
+    {{ nums }}
+</p>
+<p> Looping:
+    <ul>
+    {% for x in nums %}
+        {% if x > 80 %}
+        <li>{{forloop.counter}} : {{ x|add:-100}}</li>
+        {% elif x < 10 %}
+        <li> {{forloop.counter}} : small number! </li>
+        {% else %}
+        <li> {{forloop.counter}} : {{ x|title }}</li>
+        {% endif %}
+        
+    {% endfor %}
+    </ul>
+    
+</p>
+    
+{% endblock %}
+
+
