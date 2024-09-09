@@ -18,6 +18,7 @@ from django.urls import path
 
 from pages.views import home_view,contact_view,about_view
 from profiles.views import profile_detail_view,profile_create_view
+from characters.views import character_create_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('profile/', profile_detail_view, name='profile_detail'),
     path('create/', profile_create_view, name='profile_create'),
+    path('character/', character_create_view),
 
 ]
