@@ -8,9 +8,8 @@ class ProfileForm(forms.ModelForm):
         fields = [
             'name',
             'description',
-            'userID',
-            'email',
             'featured',
+            'email'
         ]
     
 class RawProfileForm(forms.Form):
@@ -25,5 +24,4 @@ class RawProfileForm(forms.Form):
                             "cols":20
                         }
                     ))
-    userID = forms.CharField(required=False)
     email = forms.EmailField()

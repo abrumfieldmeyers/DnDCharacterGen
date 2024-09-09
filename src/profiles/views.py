@@ -9,7 +9,6 @@ def profile_detail_view(request):
     # context = {       # Hard coded example of context for an object. Better to draw from Database instead
     #     'title': obj.name,
     #     'description': obj.description,
-    #     'userID': obj.userID,
     #     'email': obj.email,
     #     'featured':obj.featured,
     # }
@@ -19,12 +18,13 @@ def profile_detail_view(request):
     return render(request,"profiles/profile_detail.html",context)
 
 def profile_create_view(request):
-    # Handle full Django form
+    # Create a full Django form to create a new profile
     rawForm = RawProfileForm() # implied request.GET method
     if request.method == "POST":
         rawForm = RawProfileForm(request.POST)
         if rawForm.is_valid():
             Profile.objects.create(**rawForm.cleaned_data)  # **turns rawForm into args to pass in
+            rawForm = RawProfileForm()
     context = {'form': rawForm}
     return render(request,"profiles/profile_create.html",context)
 
